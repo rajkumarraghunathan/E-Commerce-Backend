@@ -13,14 +13,15 @@ const app = express();
 dotenv.config();
 app.use(express.json());
 app.use(cors({
-    origin: "https://main--radiant-quokka-c36440.netlify.app/",
+    origin: "https://main--radiant-quokka-c36440.netlify.app",
+    optionsSuccessStatus: 200,
     credentials: true,
 }))
 app.use(cookieParser());
 
 
 app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', 'https://main--radiant-quokka-c36440.netlify.app/');
+    res.header('Access-Control-Allow-Origin', 'https://main--radiant-quokka-c36440.netlify.app');
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
 
     next();
