@@ -13,16 +13,14 @@ const app = express();
 dotenv.config();
 app.use(express.json());
 app.use(cors({
-    // origin: 'https://benevolent-rabanadas-8249e7.netlify.app',
-    origin: "https://radiant-quokka-c36440.netlify.app",
-    // origin: 'http://localhost:3000',
+    origin: "https://main--radiant-quokka-c36440.netlify.app/",
     credentials: true,
 }))
 app.use(cookieParser());
 
 
 app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', 'https://radiant-quokka-c36440.netlify.app');
+    res.header('Access-Control-Allow-Origin', 'https://main--radiant-quokka-c36440.netlify.app/');
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
 
     next();
